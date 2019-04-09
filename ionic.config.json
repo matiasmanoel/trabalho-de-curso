@@ -1,0 +1,7 @@
+{
+  "name": "comunicatl",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

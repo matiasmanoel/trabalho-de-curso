@@ -1,0 +1,62 @@
+<!--
+  Generated template for the ConteudoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <!-- <a (click)="goBackHome()">Voltar</a> -->
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card class="card-login">
+
+    <ion-item>
+      <ion-label floating>Assunto</ion-label>
+      <ion-input type="text" name="assunto" [(ngModel)]="model.assunto"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Email</ion-label>
+      <ion-input type="email" name="email" [(ngModel)]="model.email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Data</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY" name="datapost" [(ngModel)]="model.datapost"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+        <ion-label floating>Descrição</ion-label>
+        <ion-textarea rows="4" maxLength="500" type="text" [(ngModel)]="model.descricao"></ion-textarea>
+      </ion-item>
+    <!--         
+        <ion-item>
+          <ion-label>Toggle</ion-label>
+          <ion-toggle></ion-toggle>
+        </ion-item>
+        
+        <ion-item>
+          <ion-label>Checkbox</ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item> -->
+
+    <img *ngIf="img" [src]="img" alt="">
+    <div padding>
+        <button ion-button block (click)="tirarFoto()" icon-only><ion-icon name="camera"></ion-icon>Tirar Foto</button>
+    </div>
+    <div padding>
+      <button ion-button block (click)="abrirGaleria()" icon-only><ion-icon name="book"></ion-icon>Abrir Galeria</button>
+  </div>
+
+    <!-- <button ion-button full (click)="saveConteudo(conteudo)">OK</button> -->
+  </ion-card>
+
+  <button ion-button block (click)="save()">Salvar</button>
+
+</ion-content>

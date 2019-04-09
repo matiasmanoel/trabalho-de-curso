@@ -1,0 +1,32 @@
+<ion-header>
+</ion-header>
+
+<ion-content padding>
+  <ion-searchbar (ionInput)="filtrarConteudo($event)" [(ngModel)]="searchText"></ion-searchbar>
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let conteudos of conteudo">
+ 
+      <button ion-item>
+        <h1>{{ conteudos.assunto }}</h1>
+        <h2>{{ conteudos.email }}</h2>
+        <h2>{{ conteudos.datapost | date:'dd/MM/yyyy' }}</h2>
+        <h2>{{ conteudos.descricao }}</h2>
+      </button>
+ 
+    </ion-item-sliding>
+  </ion-list>
+ 
+
+  <ion-fab right bottom>
+    <button ion-fab color="light" (click)="addConteudo()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+
+</ion-content>
+
+<!--<ion-item-options side="left">
+  <button ion-button color="danger" (click)="removeConteudo(conteudo)">
+    <ion-icon name="trash"></ion-icon>
+    Excluir
+  </button>
+</ion-item-options>-->
